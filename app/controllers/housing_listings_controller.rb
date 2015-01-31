@@ -10,10 +10,10 @@ class HousingListingsController < ApplicationController
 		@listing = HousingListing.new(housing_params)
 
 		if @listing.save
-			redirect housing_listing_path
+			redirect housing_listings_path
 		else
 			session[:error] = @listing.errors.full_messages
-			redirect housing_listing_path
+			redirect housing_listings_path
 		end
 	end
 

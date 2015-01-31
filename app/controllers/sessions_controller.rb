@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:signin][:password])
       session[:user_id] = user.id
       flash[:notice] = "Signed in successfully."
-      redirect_to housing_listing_path
+      redirect_to housing_listings_path
     else
       flash[:notice] = "Sorry, those credentials are incorrect."
       redirect_to signin_path
