@@ -24,23 +24,7 @@ ActiveRecord::Schema.define(version: 20150131182158) do
     t.string   "location"
     t.integer  "max_avail"
     t.boolean  "room_sharing"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "posts", force: true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.string   "date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "projects", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "imgUrl"
-    t.string   "deployUrl"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
