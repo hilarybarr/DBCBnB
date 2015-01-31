@@ -1,0 +1,23 @@
+<div id="housing_listings">
+	<%@housing_listings.each do |listing| %>
+				<div id="single_house">
+					<p>Title: <%=listing.title%> </p><br>
+					<p>Start Date: <%=listing.startdate%> </p><br>
+					<% if @listing.enddate %>
+						<p> End Date: <%=listing.enddate%></p> 
+					<%end%>
+					<p>Price: <%=listing.price%> </p><br>
+					<p>Description: <%=listing.description%> </p><br>
+					<p>Proximity: <%=listing.proximity%> </p><br>
+					<p>Max Occupants: <%=listing.maxoccupants%> </p><br>
+					<p>Room Sharing Available?: <%=listing.roomsharing%> </p><br>
+					<% listing.photos.each do |photo| %>
+						<div id="single_house_photo">
+							<%= image_tag('#{photo}.jpg')%>
+						</div>
+					<%end%>
+				</div>
+		<% end %>
+</div>
+
+
