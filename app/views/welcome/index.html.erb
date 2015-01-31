@@ -2,16 +2,16 @@
 <% if session[:error] %>
   <%= session[:error][0] %>
   <% session[:error] = nil %>
-  <% end %>
+<% end %>
 
 
 
 <div id="non_nav_div">
-  <%= image_tag("apartment.jpg", :class=>"bg")%>
+  <%#= image_tag("apartment.jpg", :class=>"bg")%>
  
 <div class="signin-form">
   <h1>Sign In</h1>
-  <%#= form_for :signin, :url => {:action => "create", :controller => "sessions"} do |f| %>
+  <%= form_for :signin, :url => {:action => "create", :controller => "sessions"} do |f| %>
    <p>
    <%= f.label :email %><br />
    <%= f.text_field :email %>
@@ -21,7 +21,7 @@
    <%= f.password_field :password %>
    </p>
    <%= f.submit "Sign in", class: "btn btn-primary" %>
-  <% end %>
+   <%end%>
 </div>
 
 </div>
