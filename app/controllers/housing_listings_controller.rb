@@ -28,6 +28,6 @@ class HousingListingsController < ApplicationController
 	private
 
 	def housing_params
-    params.require(:housing_listing).permit(:start_date, :price, :end_date, :description, :location, :max_avail, :room_sharing)
+    params.require(:housing_listing).permit(:start_date, :price, :end_date, :description, :location, :max_avail, :room_sharing, :avatar)
 	end
 end

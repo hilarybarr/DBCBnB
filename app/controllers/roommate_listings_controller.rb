@@ -28,6 +28,6 @@ class RoommateListingsController < ApplicationController
 	private
 
 	def roommate_listing_params
-    params.require(:roommate_listing).permit(:start_date, :max_price, :end_date, :description, :location, :cohort_name, :cohort_location)
+    params.require(:roommate_listing).permit(:start_date, :max_price, :end_date, :description, :location, :cohort_name, :cohort_location, :avatar)
 	end
 end
