@@ -1,0 +1,2 @@
+class HousingListingsController < ApplicationController
+end
