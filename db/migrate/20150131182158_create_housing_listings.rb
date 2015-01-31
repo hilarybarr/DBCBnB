@@ -1,6 +1,7 @@
 class CreateHousingListings < ActiveRecord::Migration
   def change
     create_table :housing_listings do |t|
+    	t.string :title
     	t.date :start_date
     	t.integer :price
     	t.date :end_date
