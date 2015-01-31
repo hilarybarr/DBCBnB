@@ -1,0 +1,2 @@
+module RoommateListingsHelper
+end
