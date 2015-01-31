@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131182158) do
+ActiveRecord::Schema.define(version: 20150131192805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "housing_listings", force: true do |t|
+    t.string   "title"
     t.date     "start_date"
     t.integer  "price"
     t.date     "end_date"
@@ -24,6 +25,19 @@ ActiveRecord::Schema.define(version: 20150131182158) do
     t.string   "location"
     t.integer  "max_avail"
     t.boolean  "room_sharing"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roommate_listings", force: true do |t|
+    t.date     "start_date"
+    t.integer  "max_price"
+    t.date     "end_date"
+    t.text     "description"
+    t.string   "location"
+    t.string   "cohort_name"
+    t.string   "cohort_location"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
