@@ -8,6 +8,7 @@ class CreateHousingListings < ActiveRecord::Migration
     	t.string :location
     	t.integer :max_avail
     	t.boolean :room_sharing
+    	t.belongs_to :user
 
       t.timestamps
     end
