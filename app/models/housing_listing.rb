@@ -2,7 +2,7 @@ class HousingListing < ActiveRecord::Base
 	has_many :comments
 
 	# paperclip
-	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:medium/devbootcamp_foot.jpg"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
 	validates :room_sharing, presence: true
