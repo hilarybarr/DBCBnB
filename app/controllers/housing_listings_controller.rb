@@ -4,16 +4,17 @@ class HousingListingsController < ApplicationController
 	end
 
 	def new
-		@listing=HousingListing.new
+		@listing = HousingListing.new
 	end
 
 	def create
 		@listing = HousingListing.new(housing_params)
+
 		if @listing.save
-			redirect_to housing_listings_path
+			redirect housing_listing_path
 		else
 			session[:error] = @listing.errors.full_messages
-			redirect_to root_path
+			redirect new_housing_listing_path
 		end
 	end
 
@@ -28,6 +29,6 @@ class HousingListingsController < ApplicationController
 	private
 
 	def housing_params
-    params.require(:housing_listing).permit(:title,  :price, :description, :location, :max_avail)
+    params.require(:housing_listing).permit(:start_date, :price, :end_date, :description, :location, :max_avail, :room_sharing, :avatar)
 	end
 end
