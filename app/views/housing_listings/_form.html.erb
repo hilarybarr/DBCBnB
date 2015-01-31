@@ -1,39 +1,18 @@
-<!--Need to add photos -->
+<!--Date not saving. Implement room sharing as boolean. Add photos -->
+<div class="container">
 
-<%= form_for(@housinglisting) do |f| %>
-  <% if @housinglist.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@housinglisting.errors.count, "error") %> prohibited this listing from being saved:</h2>
-
-      <ul>
-      <% @housinglisting.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-
-
-
-
-Room Sharing Available?
-Photos
-
-        
-
+<%= form_for(@listing) do |f| %>
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :startdate %><br>
-    <%= f.date_select :startdate %>
+    <%= f.label :start_date %><br>
+    <%= f.date_select :start_date %>
   </div>
   <div class="field">
-    <%= f.label :enddate %><br>
-    <%= f.date_select :enddate %>
+    <%= f.label :end_date %><br>
+    <%= f.date_select :end_date %>
   </div>
   <div class="field">
     <%= f.label :price %><br>
@@ -44,41 +23,19 @@ Photos
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :maxoccupants %>
-    <%= f.text_field :maxoccupants %>
-  </div>
-   <div class="field">
-    <%= f.label :proximity %>
-    <%= f.text_field :proximity %>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
   </div>
   <div class="field">
-    <%= f.label :roomsharing %><br>
-    <%= f.text_field :roomsharing %>
+    <%= f.label :max_avail %>
+    <%= f.number_field :max_avail %>
   </div>
-  <div class="field">
-    <%= f.file_field :photo %>
-  </div>
-
-  
-  
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :bedrooms %><br>
-    <%= f.number_field :bedrooms %>
-  </div>
-  <div class="field">
-    <%= f.label :bathrooms %><br>
-    <%= f.number_field :bathrooms %>
-  </div>
-  <div class="field">
-    <%= f.label :square_feet %><br>
-    <%= f.number_field :square_feet %>
-  </div>
- 
+ <!--  <div class="field">
+    <%#= f.file_field :photo %>
+  </div> -->
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+</div>

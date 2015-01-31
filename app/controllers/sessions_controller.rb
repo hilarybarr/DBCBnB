@@ -11,7 +11,6 @@ class SessionsController < ApplicationController
 
   def create
     user = User.where(username: params[:signin][:username]).first
-
     if user && user.authenticate(params[:signin][:password])
       session[:user_id] = user.id
       flash[:notice] = "Signed in successfully."

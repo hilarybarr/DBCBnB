@@ -1,0 +1,20 @@
+
+				<div id="single_house_show">
+					<p>Title: <%=@listing.title%> </p><br>
+					<% if @listing.start_date %>
+					 <p>Start Date: <%=@listing.start_date%> </p><br> 
+					<%end%>
+					<% if @listing.end_date %>
+						 <p> End Date: <%=@listing.end_date%></p>  
+					<%end%>
+					<p>Price: <%=@listing.price%> </p><br>
+					<p>Description: <%=@listing.description%> </p><br>
+					<p>Location: <%=@listing.location%> </p><br>
+					<p>Max Occupants: <%=@listing.max_avail%> </p><br> 
+					<!-- <p>Room Sharing Available?: <%#=@listing.roomsharing%> </p><br>  -->
+				<!-- 	<%# @listing.photos.each do |photo| %>
+						<div id="single_house_photo">
+							<%#= image_tag('#{photo}.jpg')%>
+						</div> -->
+				
+				</div>

@@ -4,6 +4,7 @@ class HousingListingsController < ApplicationController
 	end
 
 	def new
+		@listing = HousingListing.new
 	end
 
 	def create
