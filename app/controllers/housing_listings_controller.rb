@@ -7,7 +7,7 @@ class HousingListingsController < ApplicationController
 	end
 
 	def create
-		@listing = HousingListing.new()
+		@listing = HousingListing.new(housing_params)
 
 		if @listing.save
 			redirect housing_listing_path
@@ -19,5 +19,15 @@ class HousingListingsController < ApplicationController
 
 	def show
 		@listing = HousingListing.find(params[:id])
+	end
+
+	def destroy
+		@listing = HousingListing.find(housing_params)
+	end
+
+	private
+
+	def housing_params
+    params.require(:housing_listing).permit(:start_date, :price, :end_date, :description, :location, :max_avail, :room_sharing)
 	end
 end
