@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
   resources :users
   resources :housing_listings
+  resources :roommate_listings
 
   get 'logout' => 'sessions#destroy'
   get '/signin' => 'sessions#new'
