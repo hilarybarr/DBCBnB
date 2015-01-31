@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   resources :users
-  resources :housing_listing
+  resources :housing_listings
 
   get 'logout' => 'sessions#destroy'
   get '/signin' => 'sessions#new'

@@ -7,7 +7,7 @@ class HousingListingsController < ApplicationController
 	end
 
 	def create
-		@listing = HouseListing.new()
+		@listing = HousingListing.new()
 
 		if @listing.save
 			redirect housing_listing_path
@@ -15,5 +15,9 @@ class HousingListingsController < ApplicationController
 			session[:error] = @listing.errors.full_messages
 			redirect housing_listing_path
 		end
+	end
+
+	def show
+		@listing = HousingListing.find(params[:id])
 	end
 end
