@@ -6,25 +6,22 @@
 
 
 
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <%= image_tag("dbnb-logo.png", :class =>"logo")%>
- <!--    <ul class="nav navbar-nav navbar-right"> -->
-      <button type="button" class="btn btn-danger" id="nav_button">Log In</button>
-<!--     </ul> -->
-  </div><!-- /.navbar-collapse -->
-</nav>
-
 <div id="non_nav_div">
   <%= image_tag("apartment.jpg", :class=>"bg")%>
-  <div id="form_wrapper">
-    <div class="input-group input-group-lg">
-      <!-- <span class="input-group-addon" id="sizing-addon1"></span> -->
-      <input type="text" class="form-control" placeholder="Email" aria-describedby="sizing-addon1" id = "Email">
-      <input type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon1" id = "password1">
-      <input type="password" class="form-control" placeholder="Repeat Password" aria-describedby="sizing-addon1" id = "password2">
-          <button type ="button" class = "btn btn-danger btn-lg" id= "sign_up">Sign up</button>
-     </div>
-  </div>
+ 
+<div class="signin-form">
+  <h1>Sign In</h1>
+  <%#= form_for :signin, :url => {:action => "create", :controller => "sessions"} do |f| %>
+   <p>
+   <%= f.label :email %><br />
+   <%= f.text_field :email %>
+   </p>
+   <p>
+   <%= f.label :password %><br />
+   <%= f.password_field :password %>
+   </p>
+   <%= f.submit "Sign in", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
 </div>

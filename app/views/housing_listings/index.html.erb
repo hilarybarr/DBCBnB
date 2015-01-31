@@ -1,6 +1,7 @@
 
 	<%@listings.each do |listing| %>
 				<div id="single_house">
+					<%= image_tag listing.avatar.url %>
 					<p>Title: <%=listing.title%> </p><br>
 					<% if listing.start_date %>
 					 <p>Start Date: <%=listing.start_date%> </p><br> 
