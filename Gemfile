@@ -38,6 +38,10 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # Faker
 gem 'faker'
 
+# Socrates API
+gem 'figaro'
+gem 'dbc-ruby'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
