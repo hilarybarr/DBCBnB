@@ -10,24 +10,24 @@ class RoommateListingsController < ApplicationController
 		@roommate_listing = RoommateListing.new(roommate_listing_params)
 
 		if @roommate_listing.save
-			redirect housing_listings_path
+			redirect roommate_listing_path
 		else
-			session[:error] = @listing.errors.full_messages
-			redirect housing_listings_path
+			session[:error] = @roommate_listing.errors.full_messages
+			redirect new_roommate_listing_path
 		end
 	end
 
 	def show
-		@listing = HousingListing.find(params[:id])
+		@roommate_listing = RoommateListing.find(params[:id])
 	end
 
 	def destroy
-		@listing = HousingListing.find(housing_params)
+		@roommate_listing = RoommateListing.find(roommate_listing_params)
 	end
 
 	private
 
-	def housing_params
-    params.require(:housing_listing).permit(:start_date, :price, :end_date, :description, :location, :max_avail, :room_sharing)
+	def roommate_listing_params
+    params.require(:roommate_listing).permit(:start_date, :max_price, :end_date, :description, :location, :cohort_name, :cohort_location)
 	end
 end
