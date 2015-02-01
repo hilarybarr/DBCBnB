@@ -1,16 +1,15 @@
 
 	<%@listings.each do |listing| %>
-				<div id="single_house">
-					<%= image_tag listing.avatar.url %>
-					<p>Title: <%=listing.title%> </p><br>
+				<div id="single_house" class="col-md-4">
+					<img src="http://www.heimdecor.net/images-uploads/2014/04/14/coast-luxury-apartment-branding.jpg" height="200px" width="200px">
+					<h3><%=listing.description%> </h3><br>
 					<% if listing.start_date %>
 					 <p>Start Date: <%=listing.start_date%> </p><br> 
 					<%end%>
 					<% if listing.end_date %>
 						 <p> End Date: <%=listing.end_date%></p>  
 					<%end%>
-					<p>Price: <%=listing.price%> </p><br>
-					<p>Description: <%=listing.description%> </p><br>
+					<p>Price: $<%=listing.price%> </p><br>
 					<p>Location: <%=listing.location%> </p><br>
 					<p>Max Occupants: <%=listing.max_avail%> </p><br> 
 					<!-- <p>Room Sharing Available?: <%#=listing.roomsharing%> </p><br>  -->
@@ -18,6 +17,7 @@
 						<div id="single_house_photo">
 							<%#= image_tag('#{photo}.jpg')%>
 						</div> -->
+				
 				
 				</div>
 		<% end %>

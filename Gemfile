@@ -35,6 +35,8 @@ gem 'bcrypt', '~> 3.1.7'
 # Image uploader
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
+gem 'dbc-ruby'
+gem 'figaro'
 # Faker
 gem 'faker'
 
